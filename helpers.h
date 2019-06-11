@@ -1,12 +1,16 @@
 #pragma once
 
 #include <Arduino.h>
-#include <esp_wifi.h>
+// #include <esp_wifi.h>
+#include <WiFi.h>
 
 String getMacAddress()
 {
+    return WiFi.macAddress();
+    /*
     uint8_t macAddr[6];
     esp_wifi_get_mac(ESP_IF_WIFI_STA, macAddr);
+    
     char macAddrChr[18] = { 0 };
     sprintf(
         macAddrChr,
@@ -18,4 +22,5 @@ String getMacAddress()
         macAddr[4],
         macAddr[5]);
     return String(macAddrChr);
+    */
 }
