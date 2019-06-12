@@ -41,8 +41,10 @@ String getSensorsDataJSON()
 
     if (dhtSensor.getStatus() != DHTesp::DHT_ERROR_t::ERROR_NONE) {
         logger::error(
-            "process_sensors.cpp: error during reading dht sernsor. Error meesage: %s",
-            dhtSensor.getStatusString());
+            "process_sensors.cpp: error during reading dht sernsor. Error meesage: %s. Temp: %f. Humidity: %f",
+            dhtSensor.getStatusString(),
+            tempAndHumidity.temperature,
+            tempAndHumidity.humidity);
         result += makeSensorDataErrorString(
             String("failed to read data from sensor ") + dhtSensor.getStatusString(),
             dhtSensor.getStatus());

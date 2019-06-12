@@ -75,5 +75,7 @@ void loop()
         }
     }
 
-    delay(SEND_DATA_DELAY_MS);
+    delay(min(
+        SEND_DATA_DELAY_MS,
+        dhtSensor.getMinimumSamplingPeriod()));
 }

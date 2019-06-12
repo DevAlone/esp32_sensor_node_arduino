@@ -53,6 +53,7 @@ include_directories(
     "${ARDUINO_LIBRARIES_DIR}/RF24Network"
     "${ARDUINO_LIBRARIES_DIR}/RF24Mesh"
     "${ARDUINO_LIBRARIES_DIR}/DHT_sensor_library_for_ESPx"
+    "${ARDUINO_LIBRARIES_DIR}/DHT_sensor_library"
 )
 
 # target_link_libraries(${PROJECT_NAME})
